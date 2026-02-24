@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Home City - Jhansi</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-image: url("https://imgs.search.brave.com/GeEWd4YW4YGtCBTfgKi0NWCKHhhd2XCRGAp6iPr7f_E/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9qaGFu/c2ktZm9ydC1iZWxv/bmctdG8tcXVlZW4t/bGF4bWktYmFpLWZv/cnRyZXNzLXNpdHVh/dGVkLWxhcmdlLWhp/bGx0b3AtY2FsbGVk/LWJhbmdpcmEtdXR0/YXItcHJhZGVzaC1u/b3J0aGVybi1pbmRp/YS0xMjk4ODU1Njku/anBn");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.75);
+            margin: 40px;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .slider {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 400px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
+
+        ul {
+            margin-left: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 12px;
+            background-color: rgba(0,0,0,0.85);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="content">
+
+    <h1>Welcome to Jhansi</h1>
+    <h3>The Historical City of Uttar Pradesh</h3>
+
+    <!-- IMAGE SLIDER -->
+    <div class="slider">
+        <img src="https://imgs.search.brave.com/bO2_zAFTn1Sy165nF94avDMZa1y-i4zyXWaqgLb7lS8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RzLzQwNC84/Y2Q2MTcyMTM1NTI0/NDkuWTNKdmNDd3hN/amN3TERrNU15d3dM/RE15TXcuanBn" class="active">
+        
+        <img src="https://imgs.search.brave.com/XaQXNxP0Od5B3lUKVTZGwz1uPV8b-nT5P2zebLbh9r8/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9qaGFu/c2ktZm9ydC1mb3J0/cmVzcy1zaXR1YXRl/ZC1sYXJnZS1oaWxs/dG9wLWNhbGxlZC1i/YW5naXJhLXV0dGFy/LXByYWRlc2gtbm9y/dGhlcm4taW5kaWEt/YmVsb25nLXRvLXF1/ZWVuLWxheG1pLTEy/OTg4NTY0Ni5qcGc">
+        
+        <img src="https://imgs.search.brave.com/GeEWd4YW4YGtCBTfgKi0NWCKHhhd2XCRGAp6iPr7f_E/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9qaGFu/c2ktZm9ydC1iZWxv/bmctdG8tcXVlZW4t/bGF4bWktYmFpLWZv/cnRyZXNzLXNpdHVh/dGVkLWxhcmdlLWhp/bGx0b3AtY2FsbGVk/LWJhbmdpcmEtdXR0/YXItcHJhZGVzaC1u/b3J0aGVybi1pbmRp/YS0xMjk4ODU1Njku/anBn">
+    </div>
+
+    <hr>
+
+    <h2>About Jhansi</h2>
+    <p>
+        Jhansi is a historic city in Uttar Pradesh, India.
+        It is famous for Rani Lakshmi Bai and its important role in the Revolt of 1857.
+        Jhansi is a city of bravery, culture, and pride.
+    </p>
+
+    <h2>Major Dhyan Chand</h2>
+    <p>
+        Major Dhyan Chand, known as the "Wizard of Hockey", was born in Allahabad 
+        but had strong connections with Jhansi where he grew up and practiced hockey.
+        He was one of the greatest hockey players in the world.
+    </p>
+
+    <ul>
+        <li>Won 3 Olympic Gold Medals (1928, 1932, 1936)</li>
+        <li>Known for extraordinary ball control</li>
+        <li>National Sports Day in India is celebrated on 29 August (his birthday)</li>
+    </ul>
+
+    <h2>Famous Places in Jhansi</h2>
+    <ul>
+        <li>Jhansi Fort</li>
+        <li>Rani Mahal</li>
+        <li>Government Museum</li>
+        <li>St. Jude’s Shrine</li>
+    </ul>
+
+</div>
+
+<footer>
+    Created by Pratap Singh | My Home City - Jhansi
+</footer>
+
+<script>
+    let slides = document.querySelectorAll(".slider img");
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }, 3000);
+</script>
+
+</body>
+</html>
